@@ -18,8 +18,8 @@
     me.address      = @"hanyuanxu@icourt.cc";
     
     XYUserInfo *yf  = [[XYUserInfo alloc] init];
-    yf.name         = @"帆哥";
-    yf.icon         = @"https://www.baidu.com/img/baidu_jgylogo3.gif";
+    yf.name         = @"杨帆";
+    yf.icon         = @"fan";
     yf.address      = @"yangfan@icourt.cc";
     
     XYUserInfo *fc  = [[XYUserInfo alloc] init];
