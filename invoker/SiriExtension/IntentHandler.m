@@ -106,7 +106,7 @@
 
         } else if (matchingContacts.count == 1) {
             // We have exactly one matching contact
-            [resolutionResults addObject:[INPersonResolutionResult successWithResolvedPerson:recipient]];
+            [resolutionResults addObject:[INPersonResolutionResult successWithResolvedPerson:[matchingContacts firstObject]]];
         } else {
             // We have no contacts matching the description provided
             [resolutionResults addObject:[INPersonResolutionResult needsValue]];
