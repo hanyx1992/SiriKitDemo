@@ -44,12 +44,11 @@
     }
     
     NSMutableArray<INPersonResolutionResult *> *resolutionResults = [NSMutableArray array];
-    // Implement your contact matching logic here to create an array of matching contacts
-    NSMutableArray<INPerson *> *matchingContacts = [NSMutableArray array];
+    
     //  遍历待匹配项
-    
-    
     for (INPerson *recipient in recipients) {
+        // Implement your contact matching logic here to create an array of matching contacts
+        NSMutableArray<INPerson *> *matchingContacts = [NSMutableArray array];
         
         //  待匹配的名称和拼音
         NSString *recipientName = recipient.displayName;
