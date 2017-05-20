@@ -1,0 +1,23 @@
+//
+//  XYHeader.pch
+//  invoker
+//
+//  Created by 韩元旭 on 2017/5/16.
+//  Copyright © 2017年 韩元旭. All rights reserved.
+//
+
+#ifndef XYHeader_pch
+#define XYHeader_pch
+
+#import "XYUserInfo.h"
+#import "NSString+XY.h"
+#import <UIImageView+WebCache.h>
+
+//打印宏
+#ifdef DEBUG
+#define NSLog(FORMAT, ...) fprintf(stderr,"%s %s:%d\t%s\n",__TIME__,[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+#else
+#define NSLog(...)
+#endif
+
+#endif /* XYHeader_pch */

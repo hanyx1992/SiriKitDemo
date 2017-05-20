@@ -1,0 +1,19 @@
+# platform :ios, '10.0'
+
+target 'invoker' do
+	
+    pod 'SDWebImage'
+
+end
+
+target 'SiriExtension' do
+    
+    pod 'SDWebImage'
+
+end
+
+target 'SiriExtensionUI' do
+    
+    pod 'SDWebImage'
+    
+end
