@@ -55,25 +55,19 @@
         NSString *recipientName = recipient.displayName;
         NSString *recipientPinYin = [recipientName xy_PinYin];
         
-        //  先精确匹配
-        for (XYUserInfo *user in [XYUserInfo userList]) {
-            
-            //  用户名称和拼音
-            NSString *name = user.name;
-            
-            //  包含匹配
-            if ([recipientName  isEqualToString:name]) {
-                
+        {
+            //  先精确匹配
+            XYUserInfo *user = [XYUserInfo userInfoNamed:recipientName];
+            if (user) {
                 //  创建一个匹配成功的用户
                 INPersonHandle *handle = [[INPersonHandle alloc] initWithValue:user.address type:INPersonHandleTypeEmailAddress];
                 INImage *icon = [INImage imageNamed:user.icon];
                 
-                INPerson *person = [[INPerson alloc] initWithPersonHandle:handle nameComponents:nil displayName:name image:icon contactIdentifier:nil customIdentifier:nil aliases:nil suggestionType:INPersonSuggestionTypeSocialProfile];
+                INPerson *person = [[INPerson alloc] initWithPersonHandle:handle nameComponents:nil displayName:user.name image:icon contactIdentifier:nil customIdentifier:nil aliases:nil suggestionType:INPersonSuggestionTypeSocialProfile];
                 
                 //  记录匹配的用户
                 [matchingContacts addObject:person];
             }
-            
         }
         
         if (matchingContacts.count == 0) {
